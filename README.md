@@ -1,0 +1,1 @@
+##Simple angular module seed

@@ -6,7 +6,6 @@ var less        = require('gulp-less');
 var jshint      = require('gulp-jshint');
 var uglify      = require('gulp-uglify');
 var minifyCss   = require('gulp-minify-css');
-var livereload  = require('gulp-livereload');
 var babel       = require('gulp-babel');
 
 var appName     = 'myModule';
@@ -46,8 +45,7 @@ gulp.task('js', function() {
       presets: ['es2015']
     }))
     .pipe(env === 'production' ? uglify({mangle: false}) : gutil.noop())
-    .pipe(gulp.dest(dist + '/'))
-    .pipe(livereload());
+    .pipe(gulp.dest(dist + '/'));
 });
 
 gulp.task('styles', function () {
@@ -67,12 +65,10 @@ gulp.task('styles', function () {
   return stream.done()
     .pipe(concat(env === 'production' ? appName + '.min.css' : appName + '.css'))
     .pipe(minifyCss())
-    .pipe(gulp.dest(dist + '/'))
-    .pipe(livereload());
+    .pipe(gulp.dest(dist + '/'));
 });
 
 gulp.task('watch', function () {
-  livereload.listen();
   gulp.watch(paths.js.src, ['js']);
   gulp.watch(paths.less, ['styles']);
 });

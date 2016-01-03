@@ -2,7 +2,7 @@
   "name": "angular-module-skeleton",
   "version": "1.0.0",
   "description": "Simple seed for angular module creation",
-  "author": "Anas Mammeri <anas.mammeri@gmail.com>",
+  "author": "Anas M <captainyouz@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "babel-preset-es2015": "^6.1.4",
